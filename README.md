@@ -1,40 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Global Trade Visualization
+
+An interactive web application for visualizing global trade flows between countries. This project uses D3.js to create force-directed graphs showing trade relationships, with the ability to drill down into country-specific data.
+
+## Features
+
+- Interactive network visualization of international trade relationships
+- Directed graph with arrows showing trade flow direction
+- Line thickness represents trade volume
+- Country nodes are color-coded by region
+- Click on countries to view detailed trade information
+- Country detail view shows trade by category
+
+## Tech Stack
+
+- Next.js
+- TypeScript
+- D3.js for visualizations
+- CSS Modules for styling
 
 ## Getting Started
 
-First, run the development server:
+First, install the dependencies:
+
+```bash
+npm install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- `src/components/visualizations/`: D3.js visualization components
+- `src/data/`: Sample trade data files
+- `src/types/`: TypeScript type definitions
+- `src/pages/`: Next.js pages
+- `src/styles/`: CSS modules and global styles
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+## Data Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The application uses the following data structure:
 
-## Learn More
+- Country nodes with IDs, names, and regions
+- Trade links with source, target, value, and direction
+- Categorized trade data for country-specific view
 
-To learn more about Next.js, take a look at the following resources:
+## Future Development
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+- Add a timeline slider to view trade changes over years
+- Integrate with real trade data API
+- Add filtering by trade categories
+- Implement search functionality for countries
+- Add map visualization option
+- Add import/export ratio visualizations
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Data Sources
 
-## Deploy on Vercel
+Currently using sample data. Future versions will integrate with:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- UN Comtrade API
+- World Bank Open Data
+- Observatory of Economic Complexity (OEC)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+## License
+
+MIT
